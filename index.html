@@ -43,7 +43,7 @@ td.num,th.num{text-align:right}
 tr.hi td:first-child::before{content:"\2605\00a0";font-weight:700}
 tr.hp td:first-child::before{content:"\25C6\00a0";font-weight:700;color:var(--accent)}
 @media (prefers-contrast:more){:root{--muted:var(--text);--border:var(--text);--rule:var(--text)}.card,.tile{border-width:2px}}
-</style></head><body><header><div class="in"><h1>Rice PSY genes and methane emission</h1><p>Gene family, natural variation, association with CH<sub>4</sub>, and a promoter-editing design &mdash; preliminary (draft, 2026-11-06), not validated</p></div></header><main>
+</style></head><body><header><div class="in"><h1>Rice PSY genes and methane emission</h1><p>ตระกูลยีน PSY ในข้าว และความผันแปรตามธรรมชาติที่ promoter &mdash; ผลเบื้องต้น (ฉบับร่าง 2026-11-06) ยังไม่ผ่านการตรวจทาน</p></div></header><main>
 <h2>1. ที่มาและคำถาม</h2>
 <div class="card">
 <p>Shi, Ercoli et al. 2026 <i>Nature Communications</i> 17:2028
@@ -115,8 +115,8 @@ tr.hp td:first-child::before{content:"\25C6\00a0";font-weight:700;color:var(--ac
 ที่สร้างและใช้ H₂ จนเหลือ H₂ ให้ hydrogenotrophic methanogen น้อยลง</figcaption>
 </figure>
 <p class="note">เนื่องจากทิศทางที่ต้องการคือ <b>เพิ่ม</b> การแสดงออก คำถามของงานนี้จึงอยู่ที่
-<b>promoter</b> ไม่ใช่ coding region: ในคอลเล็กชันข้าวของเรามีความผันแปรที่ promoter หรือไม่
-มันสัมพันธ์กับ CH<sub>4</sub> ไหม และถ้าจะแก้ไขจีโนมควรแก้อย่างไร</p>
+<b>promoter</b> ไม่ใช่ coding region &mdash; หน้านี้ตอบคำถามแรกคือ
+<b>ในคอลเล็กชันข้าวของเรามีความผันแปรที่ promoter ของยีน PSY หรือไม่ และอยู่ตรงไหน</b></p>
 </div>
 
 <h2>2. ตระกูลยีน PSY ในข้าว และกับดักเรื่องชื่อ</h2>
@@ -169,111 +169,14 @@ terminator 1 kb) จาก RAP-DB แล้วดึง variant ในช่ว�
 4 จาก 2,350 ตำแหน่ง (ทั้งหมดอยู่ที่ขอบ UTR)</p>
 </div>
 
-<h2>4. ทดสอบกับการปล่อยมีเทน: ไม่พบความสัมพันธ์ แต่สำคัญกว่าคือกำลังตรวจ</h2>
-<div class="card">
-<p>ทดสอบ variant ที่ผ่าน QC <b>403 ตำแหน่ง</b> ในสายพันธุ์ที่มีค่า CH<sub>4</sub> flux
-<b>191 สายพันธุ์</b> ด้วย OLS ปรับ PC1&ndash;5 (HC3 robust) พร้อม Kruskal-Wallis
-และตรวจซ้ำด้วยฟีโนไทป์สำรองอีก 2 ชุด</p>
-<ul>
-<li><b>ไม่มี variant ใดผ่าน q &lt; 0.05 เลยแม้แต่ตัวเดียว</b> (q ต่ำสุด = 0.99)</li>
-<li>p ดิบต่ำสุดทั้งตระกูล = 0.0068 (OsPSY5 5&prime;UTR) ซึ่งเมื่อแก้ multiple testing แล้วไม่เหลืออะไร</li>
-<li><b>ยีนเป้าหมายไม่มีสัญญาณ</b>: OsPSY1 p ต่ำสุด 0.205 &middot; OsPSY2 p ต่ำสุด 0.109</li>
-</ul>
-</div>
-<div class="card">
-<h3>Minimum detectable effect &mdash; ตัวเลขที่ต้องอ่านก่อนตีความ</h3>
-<p>n = 191, power 0.80, two-sided, ปรับ PC1&ndash;5 (สมมติ HWE)</p>
-<div class="sc"><table>
-<tr><th>&alpha;</th><th>MAF</th><th>ขนาดผลที่ตรวจพบได้ (SD)</th><th>หน่วย CH<sub>4</sub></th><th>เทียบค่าเฉลี่ย</th></tr>
-<tr><td>0.05 (ไม่แก้)</td><td>0.10</td><td>0.480</td><td>1.28</td><td>18%</td></tr>
-<tr><td>0.05 (ไม่แก้)</td><td>0.20</td><td>0.360</td><td>0.96</td><td>13%</td></tr>
-<tr class="hi"><td>0.05/403</td><td>0.10</td><td>0.814</td><td>2.17</td><td>30%</td></tr>
-<tr><td>0.05/54 (tag)</td><td>0.10</td><td>0.719</td><td>1.91</td><td>27%</td></tr>
-</table></div>
-<p class="note">ด้วยขนาดตัวอย่างนี้ เรามองเห็นได้เฉพาะ allele ที่เปลี่ยน CH<sub>4</sub>
-ราว <b>18&ndash;30% ของค่าเฉลี่ย ต่อ allele หนึ่งชุด</b> ซึ่งเป็นขนาดผลระดับเดียวกับ
-transgene overexpression ในเปเปอร์ &mdash; cis-regulatory allele ตามธรรมชาติแทบไม่เคยแรงขนาดนั้น
-ผลที่ไม่พบจึงแปลว่า <b>ตรวจไม่พอ</b> ไม่ใช่ <b>ไม่มีผล</b></p>
-</div>
-
-<h2>5. ทดสอบ haplotype ของ promoter แบบกำหนดล่วงหน้า</h2>
-<div class="card">
-<p>เพื่อลดภาระ multiple testing จึงกำหนดการทดสอบหลักไว้ล่วงหน้าเพียงหนึ่งเดียว คือ
-haplotype ของ promoter 2 kb ของ OsPSY2 ทดสอบแบบ global ที่ &alpha; = 0.05
-พร้อม permutation (Freedman&ndash;Lane) 10,000 รอบ</p>
-<div class="sc"><table>
-<tr><th>ชุดทดสอบ</th><th>n</th><th>กลุ่ม</th><th>p (Wald)</th><th>p (permutation)</th><th>p (Kruskal)</th></tr>
-<tr class="hp"><td>OsPSY2 promoter 2 kb <b>(หลัก)</b></td><td>175</td><td>2</td><td>0.680</td><td>0.671</td><td>0.248</td></tr>
-<tr><td>OsPSY2 promoter 2&ndash;3 kb (รอง)</td><td>164</td><td>3</td><td>0.290</td><td>0.293</td><td>0.499</td></tr>
-<tr><td>OsPSY2 terminator (รอง)</td><td>187</td><td>2</td><td>0.731</td><td>0.727</td><td>0.163</td></tr>
-<tr><td>OsPSY1 promoter 2 kb (รอง)</td><td>150</td><td>2</td><td>0.406</td><td>0.389</td><td>0.442</td></tr>
-</table></div>
-<p class="note"><b>สาเหตุที่แท้จริงไม่ใช่แค่ขนาดตัวอย่าง</b> &mdash; variant 24 ตำแหน่งใน promoter
-ของ OsPSY2 ยุบเหลือ tag อิสระเพียง <b>3 ตำแหน่ง</b> และเหลือ haplotype จริง
-<b>2 แบบ</b> (94% กับ 6% ในชุดที่มีฟีโนไทป์) การทดสอบจึงกลายเป็นการเทียบกลุ่มเล็ก 11 กับกลุ่มใหญ่ 164
-ทำให้ขนาดผลที่ตรวจพบได้ = 0.87 SD &asymp; 33% ของค่าเฉลี่ย ซึ่ง<b>แย่กว่า</b>การสแกนรายตำแหน่ง</p>
-<p>ข้อสังเกตเชิงวิธี: ผลต่างค่าเฉลี่ยดิบระหว่างสอง haplotype เป็น +0.83 แต่หลังปรับ PC1&ndash;5
-ค่าสัมประสิทธิ์กลับเป็น &minus;0.52 (<b>สลับทิศ</b>) ความต่างดิบจึงอธิบายได้ด้วย
-population structure ทั้งหมด &mdash; ทั้งสองค่าไม่มีนัยสำคัญ แต่ถ้ารายงานค่าเฉลี่ยดิบ
-อย่างเดียวจะชวนให้เข้าใจผิด</p>
-</div>
-
-<h2>6. ข้อเสนอการออกแบบแก้ promoter ของ OsPSY2</h2>
-<div class="card">
-<p><b>เลือก OsPSY2 เป็นเป้าหลัก</b> เพราะลด CH<sub>4</sub> ได้มากกว่า (58% เทียบ 38%)
-และ<b>ไม่กระทบผลผลิต</b> ขณะที่ PSY1 ในเปเปอร์มีรวงติดเมล็ดไม่เต็ม เมล็ดน้อยลง
-และน้ำหนักพันเมล็ดต่ำกว่าชุดควบคุม</p>
-<h3>ข้อเท็จจริงจากลำดับ promoter จริง</h3>
-<ul>
-<li><b>5&prime;UTR ไม่มี ATG เลยใน 154 bp &rarr; ไม่มี uORF</b> จึงตัดแนวทางแก้ uORF ออกได้ด้วยข้อมูล</li>
-<li><b>TATA-box <code>TATAAAA</code> ที่ TSS&minus;32</b> ซึ่งเป็นตำแหน่งตามตำรา (&minus;25 ถึง &minus;35) &mdash; ห้ามตัดโดน</li>
-<li>GC: promoter 2 kb = 41%, ช่วง &minus;60..&minus;1 = 57%</li>
-</ul>
-</div>
-<div class="card">
-<div class="sc"><table>
-<tr><th>แนวทาง</th><th>สถานะ</th><th>ข้อดี</th><th>ข้อจำกัด</th></tr>
-<tr class="hp"><td><b>A. CRISPRa</b> (dCas9 + โดเมนกระตุ้น ไม่ตัด DNA)</td><td>ทำได้ในข้าวแล้ว</td><td>ไม่ต้องพึ่ง HDR, ปรับระดับได้, ไม่แตะลำดับจีโนม</td><td>ยังเป็น transgene; ต้องทดสอบหลาย guide</td></tr>
-<tr><td><b>B. Knock-in promoter แรง</b> (prime-editing + recombinase)</td><td>ทำได้ใน Kitaake แล้ว</td><td>ใกล้เคียงกับที่เปเปอร์ทำที่สุด, ได้ allele ถาวร</td><td>ประสิทธิภาพต่ำ (ระดับหลักหน่วยเปอร์เซ็นต์); ยังเป็น GMO</td></tr>
-<tr><td><b>C. แก้ promoter เดิมเป็น allelic series</b></td><td>ทำได้ในข้าวแล้ว</td><td>ได้ต้น transgene-free</td><td>เป็นการคัดกรอง ไม่ใช่การออกแบบ; ส่วนใหญ่ได้ allele ที่ลดไม่ใช่เพิ่ม</td></tr>
-<tr><td><b>D. แก้ uORF</b></td><td><b>ใช้ไม่ได้</b></td><td>&mdash;</td><td>OsPSY2 ไม่มี uORF</td></tr>
-<tr><td>E. ใช้ allele ธรรมชาติผสมเข้าพันธุ์</td><td><b>ปิดแล้ว</b></td><td>&mdash;</td><td>promoter แทบไม่มีความหลากหลาย (หัวข้อ 5)</td></tr>
-</table></div>
-<p class="m">อ้างอิงวิธีการ: CRISPRa ในข้าว &mdash; Xiong et al. 2021 <i>J Integr Plant Biol</i> 63:634&ndash;645 &middot;
-knock-in &mdash; Sun et al. 2024 <i>Nat Biotechnol</i> 42:316&ndash;327 (PrimeRoot) &middot;
-allelic series &mdash; Rodr&iacute;guez-Leal et al. 2017 <i>Cell</i> (มะเขือเทศ) และงานในข้าว
-(OsTB1/SCM3, Waxy, OsD18) &middot; uORF &mdash; Zhang et al. 2018 <i>Nat Biotechnol</i> 36:894&ndash;898</p>
-</div>
-<div class="card">
-<h3>guide ที่ออกแบบไว้ (SpCas9, PAM = NGG)</h3>
-<p>สแกนช่วง TSS&minus;500 ถึง TSS+150 ได้ 76 ไซต์ คัดเฉพาะช่วง TSS&minus;400 ถึง &minus;50 ที่ไม่ชน
-TATA-box เหลือ 29 ไซต์ แล้วตรวจ off-target ทั้งจีโนม 8 ไซต์ <b>ทุกไซต์ไม่ซ้ำที่ใดในจีโนมเลย</b>
-(perfect match 1 จุดคือเป้าหมาย ไม่มีไซต์ที่ต่างกัน 1&ndash;2 เบส)</p>
-<div class="sc"><table>
-<tr><th>protospacer (20 nt)</th><th>PAM</th><th>ช่วงบนสาย +</th><th>เทียบ TSS</th><th>สาย</th><th>GC</th><th>ทับ variant ในคอลเล็กชัน</th></tr>
-<tr class="hi"><td><code>TGTACTCCATCCTAGCCGAA</code></td><td>TGG</td><td>23,978,399&ndash;23,978,418</td><td>&minus;178</td><td>&minus;</td><td>50%</td><td>ไม่มีเลย</td></tr>
-<tr class="hi"><td><code>TTAAAGCCATTCGGCTAGGA</code></td><td>TGG</td><td>23,978,390&ndash;23,978,409</td><td>&minus;187</td><td>+</td><td>45%</td><td>ไม่มีเลย</td></tr>
-<tr><td><code>GTGGTGACGGATGCAATGTG</code></td><td>TGG</td><td>23,978,360&ndash;23,978,379</td><td>&minus;217</td><td>&minus;</td><td>55%</td><td>เฉพาะ allele ที่หายากมาก</td></tr>
-<tr><td><code>CTAAACTTGCAGCTCCAACG</code></td><td>TGG</td><td>23,978,262&ndash;23,978,281</td><td>&minus;315</td><td>+</td><td>50%</td><td>เฉพาะ allele ที่หายากมาก</td></tr>
-</table></div>
-<p class="note"><b>กับดักที่พบจากข้อมูลของเราเอง:</b> guide ออกแบบบนจีโนมอ้างอิง Nipponbare
-แต่เมื่อนำไปทาบกับความผันแปรจริงในคอลเล็กชัน พบว่า <b>4 ใน 8 ไซต์ที่ตรวจ ไปทับตำแหน่งที่
-ประมาณ 90% ของสายพันธุ์เป็น allele อีกแบบ</b> &mdash; guide เหล่านั้นจะ mismatch ในพันธุ์ส่วนใหญ่
-<b>ถ้าจะใช้กับพันธุ์ไทย/indica ต้องอ่านลำดับ promoter ของพันธุ์เป้าหมายก่อนออกแบบ guide เสมอ</b>
-สี่ไซต์ในตารางคือไซต์ที่ปลอดภัยที่สุด</p>
-<h3>ลำดับการวัดผลที่เสนอ (ห้ามข้ามขั้น)</h3>
-<p>qPCR ยืนยันระดับการแสดงออก &rarr; ฟีโนไทป์ราก (ความยาวราก, % aerenchyma, lignin) &rarr;
-ผลผลิต (จำนวนเมล็ดติด, น้ำหนักพันเมล็ด) &rarr; CH<sub>4</sub> ในกระถาง &rarr; แปลงจริง &mdash;
-ถ้าฟีโนไทป์รากไม่เปลี่ยน กลไกตามเปเปอร์ไม่เกิด ไม่ต้องไปวัด CH<sub>4</sub></p>
-</div>
-
-<div class="card note"><b>อ่านก่อน:</b> ผลที่ไม่พบความสัมพันธ์ในหน้านี้ หมายถึง
-<b>ข้อมูลชุดนี้ยังไม่มีกำลังพอจะตอบ</b> ไม่ได้แปลว่ายีน PSY ไม่เกี่ยวกับมีเทน &mdash;
-ดูตัวเลข minimum detectable effect ในหัวข้อที่ 4 ก่อนตีความ ·
-ข้อมูลจีโนไทป์และฟีโนไทป์ยังไม่ตีพิมพ์ หน้านี้แสดงเฉพาะผลสรุประดับรวม ·
+<div class="card note"><b>ขอบเขตของหน้านี้:</b> รายงานเฉพาะ
+<b>ตระกูลยีน PSY และความผันแปรตามธรรมชาติที่พบในคอลเล็กชัน</b> เท่านั้น
+ส่วนการทดสอบความสัมพันธ์กับค่าการปล่อย CH<sub>4</sub> และข้อเสนอการแก้ไข promoter
+<b>ถอดออกไปก่อน</b> ระหว่างรอตรวจสอบที่มา หน่วย และวิธีวัดของข้อมูลฟีโนไทป์ ·
+ข้อมูลจีโนไทป์ยังไม่ตีพิมพ์ หน้านี้แสดงเฉพาะผลสรุประดับรวม ·
 เป็นผลเบื้องต้น โปรดอย่าอ้างอิง</div>
 
-<h2>7. วิธีการโดยสรุป</h2>
+<h2>4. วิธีการโดยสรุป</h2>
 <div class="card">
 <ul>
 <li><b>จีโนม/annotation</b>: IRGSP-1.0 และ RAP-DB (ชุด representative, 2026-02-05)</li>
@@ -281,16 +184,11 @@ TATA-box เหลือ 29 ไซต์ แล้วตรวจ off-target ท
 ช่วงยีน &plusmn;3 kb แล้ว mask genotype ที่ DP &lt; 5 หรือ GQ &lt; 20 เป็น missing</li>
 <li><b>annotation ของ variant</b>: snpEff (ฐาน <i>Oryza sativa</i>) ตรวจเทียบกับการจัดกลุ่ม
 ภูมิภาคที่คำนวณจาก RAP-DB เอง</li>
-<li><b>สถิติ</b>: OLS ปรับ PC1&ndash;5 ด้วย HC3 robust SE, Kruskal-Wallis, BH-FDR,
-Bonferroni ทั้งแบบนับทุกตำแหน่งและนับเฉพาะ tag (LD prune r&sup2; &lt; 0.8),
-permutation แบบ Freedman&ndash;Lane</li>
-<li><b>power</b>: คำนวณ minimum detectable effect ล่วงหน้า <b>ไม่ใช้ observed power</b></li>
-<li><b>การออกแบบ guide</b>: สแกน PAM NGG บนลำดับอ้างอิง กรอง GC 30&ndash;75% และไม่มี TTTT
-ตรวจ off-target ทั้งจีโนมด้วยการจับคู่ seed 12 nt + PAM แล้วนับ mismatch ของ protospacer เต็ม
-และยืนยันพิกัดกับ <code>samtools faidx</code></li>
+<li><b>การนับความผันแปร</b>: นับเฉพาะตำแหน่งที่ผ่าน QC (biallelic SNP, call rate &ge;0.8,
+MAF &ge;0.05) แยกตามภูมิภาคที่นิยามแบบรู้ทิศทาง</li>
 </ul>
 </div>
-<p style="color:var(--muted);font-size:.85rem">ข้อจำกัด: ขนาดตัวอย่างที่มีฟีโนไทป์ CH<sub>4</sub> เพียง 191 สายพันธุ์ ปรับ population structure ด้วย PC1&ndash;5 เท่านั้น ไม่มีข้อมูลระดับการแสดงออกของสายพันธุ์ในคอลเล็กชัน และยังไม่มีการยืนยันจากชุดข้อมูลภายนอก การวิเคราะห์ cis-element และการออกแบบ guide เป็นผลเชิงคำนวณที่ยังไม่ได้ทดสอบในห้องปฏิบัติการ เป็นผลเบื้องต้น โปรดอย่าอ้างอิง</p></main><script>
+<p style="color:var(--muted);font-size:.85rem">ข้อจำกัด: ตัวแปรทั้งหมดเรียกจากข้อมูล WGS แบบ raw ที่ยังไม่ผ่านการกรองระดับชุดข้อมูล และนับจากจีโนมอ้างอิง Nipponbare ซึ่งหลายตำแหน่งต่างจากพันธุ์ส่วนใหญ่ในคอลเล็กชัน · ยังไม่มีข้อมูลระดับการแสดงออก จึงยังเชื่อมความผันแปรที่ promoter กับปริมาณ transcript ไม่ได้ · ยังไม่มีการยืนยันจากชุดข้อมูลภายนอก · เป็นผลเบื้องต้น โปรดอย่าอ้างอิง</p></main><script>
 (function(){
   var main=document.querySelector('main'); if(!main) return;
   var kids=Array.prototype.slice.call(main.children), groups=[], cur=null, tail=null;
